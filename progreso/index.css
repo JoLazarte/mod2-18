@@ -1,12 +1,17 @@
-#myProgress {
+#container {
+    display: flex;
+    align-items: center;
     width: 100%;
+    height: 50px;
     background-color: #ddd;
-  }
-  
-#myBar {
+    border: 1px solid black;
+}
+#progreso {
     width: 10%;
-    height: 30px;
-    background-color: #f7890c;
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #fc7404;
     text-align: center;
     line-height: 30px;
     color: white;

@@ -5,6 +5,7 @@ const bot4 =  document.querySelector("#botonD");
 const bot5 =  document.querySelector("#botonE");
 const bot6 =  document.querySelector("#botonF");
 /*
+//Resolución más larga e innecesaria:
 let numeroInicial = document.querySelector("#numeroContador");
 
 bot1.addEventListener('click', () => {
@@ -56,8 +57,8 @@ bot6.addEventListener('click', () => {
     numeroInicial.textContent--;
     numeroInicial.textContent--;
 });
-
 */
+//Resolución sintetizada:
 
 const numeroInicial = document.querySelector("#numeroContador");
 let numeroNuevo = 0;

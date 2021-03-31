@@ -1,43 +1,50 @@
-const botonIzq = document.querySelector("#botonIzquierdo");
-botonIzq.style = "margin-right:220px;";
+/*
+Crear un documento html con
+-Una barra de progreso (con un div dentro de otro)
+-Un elemento de texto que indique el progreso (p. ej. 50%)
+-Dos botones, uno para incrementar y otro para dismininuir 
+la barra (- y +)
+Cuando se apretan los botones, la barra de progreso tiene 
+que aumentar o disminuir respectivamente y el texto que 
+indica el porcentaje de progreso tiene que actualizarse
+lo mismo tiene que pasar cuando se apreta la flecha 
+derecha (aumentar progreso) y la flecha izquierda 
+(disminuir progreso) el incremento/decremento 
+es del 10%
+*/
+const barra = document.querySelector("#progreso");
+const disminuye = document.querySelector("#botonDerecho");
+const incrementa = document.querySelector("#botonIzquierdo");
+let ancho = 10;
 
-const increase = () => {
-    const miBarra = document.querySelector("#myBar");
-    let width = 10;
-    const id = setInterval(frame, 10);
-    function frame() {
-        if (width >= 100) {
-            clearInterval(id);
-        } else {
-            width++;
-            miBarra.style.width = width + "%";
-            miBarra.innerHTML = width + "%";
-        }
-    }
-};
 
-const decrease = () => {
-    const miBarra = document.querySelector("#myBar");
-    let width = 100;
-    const id = setInterval(frame,10);
-    function frame() {
-        if (width <= 10) {
-            clearInterval(id);
-        } else {
-            width--;
-            miBarra.style.width = width + "%";
-            miBarra.innerHTML = width + "%";
-        }
+const incrementar = () => {
+    if(ancho < 100) {
+    ancho = ancho + 10;
+    if(ancho > 10 && ancho <= 100){
+    barra.style = `width:${ancho}%;` 
+    barra.textContent = `${ancho}%`
     }
-};
+}};
+incrementa.addEventListener("click", incrementar);
+
+const disminuir = () => {
+    if(ancho > 10){
+    ancho = ancho - 10;
+    if(ancho > -10 && ancho <= 100){
+    barra.style = `width:${ancho}%;` 
+    barra.textContent = `${ancho}%`
+    } 
+}};
+disminuye.addEventListener("click", disminuir);
 
 const body = document.querySelector("body");
 body.addEventListener('keydown', (event) => {
     console.log(event.key);
     if (event.key == "ArrowRight") {
-        increase();
+        incrementar();
     } else if (event.key == "ArrowLeft") {
-        decrease();
+        disminuir();
     } else {
         alert('Pulsa la flecha izquierda o derecha');
     }
