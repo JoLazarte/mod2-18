@@ -1,0 +1,13 @@
+#numeroContador {
+    border: 2px solid rgb(230, 34, 34);
+    width: 10%;
+    padding: 1%;
+}
+
+.botones {
+    color: rgb(197, 223, 201);
+    background-color: rgb(29, 126, 65);
+    margin-right: 10px;
+    padding: 8px;
+    font-weight: bold;
+}
