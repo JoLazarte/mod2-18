@@ -1,67 +1,18 @@
+/*
+
 const bot1 =  document.querySelector("#botonA");
 const bot2 =  document.querySelector("#botonB");
 const bot3 =  document.querySelector("#botonC");
 const bot4 =  document.querySelector("#botonD");
 const bot5 =  document.querySelector("#botonE");
 const bot6 =  document.querySelector("#botonF");
-/*
-//Resolución más larga e innecesaria:
-let numeroInicial = document.querySelector("#numeroContador");
-
-bot1.addEventListener('click', () => {
-    numeroInicial.textContent++;
-});
-
-bot2.addEventListener('click', () => {
-    numeroInicial.textContent--;
-});
-
-bot3.addEventListener('click', () => {
-    numeroInicial.textContent++;
-    numeroInicial.textContent++;
-    numeroInicial.textContent++;
-    numeroInicial.textContent++;
-    numeroInicial.textContent++;
-});
-
-bot4.addEventListener('click', () => {
-    numeroInicial.textContent--;
-    numeroInicial.textContent--;
-    numeroInicial.textContent--;
-    numeroInicial.textContent--;
-    numeroInicial.textContent--;
-});
-
-bot5.addEventListener('click', () => {
-    numeroInicial.textContent++;
-    numeroInicial.textContent++;
-    numeroInicial.textContent++;
-    numeroInicial.textContent++;
-    numeroInicial.textContent++;
-    numeroInicial.textContent++;
-    numeroInicial.textContent++;
-    numeroInicial.textContent++;
-    numeroInicial.textContent++;
-    numeroInicial.textContent++;
-});
-
-bot6.addEventListener('click', () => {
-    numeroInicial.textContent--;
-    numeroInicial.textContent--;
-    numeroInicial.textContent--;
-    numeroInicial.textContent--;
-    numeroInicial.textContent--;
-    numeroInicial.textContent--;
-    numeroInicial.textContent--;
-    numeroInicial.textContent--;
-    numeroInicial.textContent--;
-    numeroInicial.textContent--;
-});
+  
 */
-//Resolución sintetizada:
 
 const numeroInicial = document.querySelector("#numeroContador");
 let numeroNuevo = 0;
+
+/*
 
 bot1.addEventListener("click", () =>{
     numeroNuevo += 1;
@@ -91,4 +42,42 @@ bot5.addEventListener("click", () =>{
 bot6.addEventListener("click", () =>{
     numeroNuevo -= 10;
     numeroInicial.textContent = numeroNuevo;
+});
+
+*/
+
+//Con funciones:
+
+const config = {
+    "#botonA": 1,
+    "#botonB": -1,
+    "#botonC": 5,
+    "#botonD": -5,
+    "#botonE": 10,
+    "#botonF": -10    
+}
+
+console.log(Object.entries(config));
+/*
+Object.entries(config).map(entrie => {
+    const [ id, value ] = entrie
+
+    console.log(id, value)
+
+    document.querySelector(id).addEventListener("click", () =>{
+        console.log("click", id, value, numeroNuevo)
+        numeroNuevo += value;
+        numeroInicial.textContent = numeroNuevo;
+    });
+})
+*/
+Object.entries(config).map(([ id, value ]) => {
+
+    console.log(id, value)
+
+    document.querySelector(id).addEventListener("click", () =>{
+        console.log("click", id, value, numeroNuevo)
+        numeroNuevo += value;
+        numeroInicial.textContent = numeroNuevo;
+    });
 });
