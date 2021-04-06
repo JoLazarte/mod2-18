@@ -7,12 +7,8 @@ const bot4 =  document.querySelector("#botonD");
 const bot5 =  document.querySelector("#botonE");
 const bot6 =  document.querySelector("#botonF");
   
-*/
-
 const numeroInicial = document.querySelector("#numeroContador");
 let numeroNuevo = 0;
-
-/*
 
 bot1.addEventListener("click", () =>{
     numeroNuevo += 1;
@@ -48,6 +44,9 @@ bot6.addEventListener("click", () =>{
 
 //Con funciones:
 
+const numeroInicial = document.querySelector("#numeroContador");
+let numeroNuevo = 0;
+
 const config = {
     "#botonA": 1,
     "#botonB": -1,
@@ -56,8 +55,21 @@ const config = {
     "#botonE": 10,
     "#botonF": -10    
 }
+console.log(config); //object
 
-console.log(Object.entries(config));
+console.log(Object.entries(config)); //array con 6 arrays dentro (en este caso)
+
+Object.entries(config).map(([ id, value ]) => {
+
+    console.log(id, value)//array deconstruido en id (#, porque es el caso del ejercicio) y valor
+
+    document.querySelector(id).addEventListener("click", () =>{
+        console.log("click", id, value, numeroNuevo)
+        numeroNuevo += value;
+        numeroInicial.textContent = numeroNuevo;
+    });
+});
+
 /*
 Object.entries(config).map(entrie => {
     const [ id, value ] = entrie
@@ -71,13 +83,4 @@ Object.entries(config).map(entrie => {
     });
 })
 */
-Object.entries(config).map(([ id, value ]) => {
 
-    console.log(id, value)
-
-    document.querySelector(id).addEventListener("click", () =>{
-        console.log("click", id, value, numeroNuevo)
-        numeroNuevo += value;
-        numeroInicial.textContent = numeroNuevo;
-    });
-});

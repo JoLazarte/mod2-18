@@ -1,0 +1,29 @@
+.rojo{
+    background-color: red;
+    color: white;
+}
+.amarillo{
+    background-color: yellow;
+    color: rgb(145, 124, 124);
+}
+.verde{
+    background-color: green;
+    color: white;
+}
+.azul{
+    background-color: blue;
+    color: white;
+}
+.rosa{
+    background-color: pink;
+    color: white;
+}
+.naranja{
+    background-color: orange;
+    color: white;
+}
+#cuadrado{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}

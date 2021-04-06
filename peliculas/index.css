@@ -1,0 +1,19 @@
+img {
+    width: 250px;
+    height: 350px;
+}
+button {
+    margin-right: 20px;
+}
+.ciencia-ficcion{
+    display: none;
+    margin: 20px;
+}
+.fantasia{
+    display: none;
+    margin: 20px;
+}
+.terror{
+    display: none;
+    margin: 20px;
+}
