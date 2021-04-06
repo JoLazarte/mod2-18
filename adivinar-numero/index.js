@@ -16,7 +16,7 @@ let numeroSeleccionado = 0;
 const pistaOrespuesta = document.querySelector("#pistaRespuesta");
 const body = document.querySelector("body");
 
-body.addEventListener('keypress', (event) => {
+const adivinaElNumero = (event) => {
     numeroSeleccionado = event.key;
     console.log(numeroSeleccionado);
     if (numeroAleatorio == numeroSeleccionado) {
@@ -26,10 +26,19 @@ body.addEventListener('keypress', (event) => {
     } else if (numeroAleatorio > numeroSeleccionado) {
         pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado}. El número es mayor.`;
     }
-});
+};
+body.addEventListener('keypress', adivinaElNumero);
+
 const reiniciar = document.querySelector("#reiniciar");
+const nuevaPartida = document.querySelector("#nuevaPartida")
+
 reiniciar.addEventListener("click", () => {
-    
+    nuevaPartida.textContent = "¡Nueva partida!";
+    pistaOrespuesta.textContent = "";
+    numeroAleatorio = rand();
+    console.log(numeroAleatorio);
+    body.addEventListener('keypress', adivinaElNumero);
+
 });
 /*
 body.addEventListener('keypress', (event) => {
@@ -73,129 +82,6 @@ body.addEventListener('keypress', (event) => {
         pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado}. El número es menor.`;
     } if (numeroAleatorio == 9 && numeroSeleccionado < 9) {
         pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado}. El número es mayor.`;
-    } 
-});
-*/
-/*
-body.addEventListener('keypress', (event) => {
-    numeroSeleccionado = event.key;
-    console.log(numeroSeleccionado);
-    if (numeroAleatorio == numeroSeleccionado) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} ¡Adivinaste!`;
-    } if (numeroAleatorio == 0 && 
-        (numeroSeleccionado == 1 
-        || numeroSeleccionado == 2
-        || numeroSeleccionado == 3
-        || numeroSeleccionado == 4
-        || numeroSeleccionado == 5
-        || numeroSeleccionado == 6
-        || numeroSeleccionado == 7                
-        || numeroSeleccionado == 8
-        || numeroSeleccionado == 9 )) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es menor`;
-    } if (numeroAleatorio == 1 && 
-        numeroSeleccionado == 0) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es mayor`;;
-    } if (numeroAleatorio == 1 && (
-        numeroSeleccionado == 2
-        || numeroSeleccionado == 3
-        || numeroSeleccionado == 4
-        || numeroSeleccionado == 5
-        || numeroSeleccionado == 6
-        || numeroSeleccionado == 7                
-        || numeroSeleccionado == 8
-        || numeroSeleccionado == 9 )) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es menor`;
-    } if (numeroAleatorio == 2 && 
-        (numeroSeleccionado == 0 || numeroSeleccionado == 1)) {
-        pistaOrespuesta.textContent =`Elegiste ${numeroSeleccionado} El número es mayor`;
-    } if (numeroAleatorio == 2 && (
-        numeroSeleccionado == 3
-        || numeroSeleccionado == 4
-        || numeroSeleccionado == 5
-        || numeroSeleccionado == 6
-        || numeroSeleccionado == 7
-        || numeroSeleccionado == 8               
-        || numeroSeleccionado == 9)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es menor`;
-    } if (numeroAleatorio == 3 && 
-        (numeroSeleccionado == 0 || numeroSeleccionado == 1 
-        || numeroSeleccionado == 2)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es mayor`;
-    } if (numeroAleatorio == 3 && (
-        numeroSeleccionado == 4
-        || numeroSeleccionado == 5
-        || numeroSeleccionado == 6
-        || numeroSeleccionado == 7
-        || numeroSeleccionado == 8
-        || numeroSeleccionado == 9)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es menor`;
-    } if (numeroAleatorio == 4 && 
-        (numeroSeleccionado == 0 ||numeroSeleccionado == 1 
-        ||numeroSeleccionado == 2
-        ||numeroSeleccionado == 3)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es mayor`;
-    } if (numeroAleatorio == 4 && (
-        numeroSeleccionado == 5
-        ||numeroSeleccionado == 6
-        ||numeroSeleccionado == 7
-        ||numeroSeleccionado == 8
-        ||numeroSeleccionado == 9)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es menor`;
-    } if (numeroAleatorio == 5 && 
-        (numeroSeleccionado == 0 ||numeroSeleccionado == 1 
-        ||numeroSeleccionado == 2
-        ||numeroSeleccionado == 3
-        ||numeroSeleccionado == 4)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es mayor`;
-    } if (numeroAleatorio == 5 && (numeroSeleccionado == 6
-        ||numeroSeleccionado == 7
-        ||numeroSeleccionado == 8
-        ||numeroSeleccionado == 9)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es menor`;
-    } if (numeroAleatorio == 6 && 
-        (numeroSeleccionado == 0 ||numeroSeleccionado == 1 
-        ||numeroSeleccionado == 2
-        ||numeroSeleccionado == 3
-        ||numeroSeleccionado == 4
-        || numeroSeleccionado == 5)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es mayor`;
-    } if (numeroAleatorio == 6 && (numeroSeleccionado == 7
-        ||numeroSeleccionado == 8
-        ||numeroSeleccionado == 9)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es menor`;
-    } if (numeroAleatorio == 7 && 
-        (numeroSeleccionado == 0 ||numeroSeleccionado == 1 
-        ||numeroSeleccionado == 2
-        ||numeroSeleccionado == 3
-        ||numeroSeleccionado == 4
-        || numeroSeleccionado == 5
-        || numeroSeleccionado == 6)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es mayor`;
-    } if (numeroAleatorio == 7 && (numeroSeleccionado == 8
-        ||numeroSeleccionado == 9)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es menor`;
-    }  if (numeroAleatorio == 8 && 
-        (numeroSeleccionado == 0 ||numeroSeleccionado == 1 
-        ||numeroSeleccionado == 2
-        ||numeroSeleccionado == 3
-        ||numeroSeleccionado == 4
-        || numeroSeleccionado == 5
-        || numeroSeleccionado == 6
-        || numeroSeleccionado == 7)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es mayor`;
-    } if (numeroAleatorio == 8 && (numeroSeleccionado == 9)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es menor`;
-    }  if (numeroAleatorio == 9 && 
-        (numeroSeleccionado == 0 ||numeroSeleccionado == 1 
-        ||numeroSeleccionado == 2
-        ||numeroSeleccionado == 3
-        ||numeroSeleccionado == 4
-        || numeroSeleccionado == 5
-        || numeroSeleccionado == 6
-        || numeroSeleccionado == 7
-        || numeroSeleccionado == 8)) {
-        pistaOrespuesta.textContent = `Elegiste ${numeroSeleccionado} El número es mayor`;
     } 
 });
 */

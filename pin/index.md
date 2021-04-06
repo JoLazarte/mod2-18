@@ -3,8 +3,7 @@ En un documento html crear botones con números del
 borrar, y un elemento de texto.
 Cuando se presionan los botones de números, se 
 tienen que ir agregando los números en el elemento 
-de texto. Por ejemplo, si se presiona el 1 y después 
-el 3, se tiene que mostrar "13".
+de texto. Por ejemplo, si se presiona el 1 y después el 3, se tiene que mostrar "13".
 El máximo de dígitos que se pueden ingresar es 6, 
 cuando ya hay 6 dígitos ingresados y se clickea un 
 nuevo número, no debe pasar nada.

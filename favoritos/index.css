@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.imagenes, .favoritos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#fav1, #fav2, #fav3, #fav4, #fav5,
+#fav6, #fav7, #fav8, #fav9, #fav10 {
+    display: none;
+}
+img {
+    width: 470px;
+    height: 300px;
+    margin: 5px;
+    
+}
+h1 {
+    text-align: center;
+    color: rgb(10, 150, 160);
+}

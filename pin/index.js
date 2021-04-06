@@ -10,53 +10,52 @@ const boton8 = document.querySelector(".boton8");
 const boton9 = document.querySelector(".boton9");
 const botonBorrar = document.querySelector(".botonBorrar");
 const botonReinicio = document.querySelector(".botonReinicio");
-const parrafo = document.querySelector(".parrafo");
+const pin = document.querySelector("#pin");
 
-
-
-const agregarNumero = (boton)=>{
-    let largoDeTexto = parrafo.textContent.length;
-    if(largoDeTexto<6){
+const escribirPin = (boton)=>{ 
+    //El "pin" va a ser un string, ya que un número se concatena al otro.
+    if (pin.textContent.length < 6) {
     let numero = boton.textContent;
-    parrafo.textContent = parrafo.textContent+numero;
+    //cada button tiene un textContent, que en este caso, es número
+    pin.textContent = pin.textContent + numero;
     }
-}
+};
 
 boton0.addEventListener("click",()=>{
-    agregarNumero(boton0);
+    escribirPin(boton0);
 });
 boton1.addEventListener("click",()=>{
-    agregarNumero(boton1);
+    escribirPin(boton1);
 });
 boton2.addEventListener("click",()=>{
-    agregarNumero(boton2);
+    escribirPin(boton2);
 });
 boton3.addEventListener("click",()=>{
-    agregarNumero(boton3);
+    escribirPin(boton3);
 });
 boton4.addEventListener("click",()=>{
-    agregarNumero(boton4);
+    escribirPin(boton4);
 });
 boton5.addEventListener("click",()=>{
-    agregarNumero(boton5);
+    escribirPin(boton5);
 });
 boton6.addEventListener("click",()=>{
-    agregarNumero(boton6);
+    escribirPin(boton6);
 });
 boton7.addEventListener("click",()=>{
-    agregarNumero(boton7);
+    escribirPin(boton7);
 });
 boton8.addEventListener("click",()=>{
-    agregarNumero(boton8);
+    escribirPin(boton8);
 });
 boton9.addEventListener("click",()=>{
-    agregarNumero(boton9);
+    escribirPin(boton9);
 });
 
 botonBorrar.addEventListener("click",()=>{
-  let textoEditado = parrafo.textContent.slice(0, -1) 
-  parrafo.textContent = textoEditado;
-})
+  let textoEditado = pin.textContent.slice(0, -1) 
+  pin.textContent = textoEditado;
+});
 botonReinicio.addEventListener("click",()=>{ 
-  parrafo.textContent = "";
-})
+  pin.textContent = "";
+});
